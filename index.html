@@ -1,1 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
 
+    <title>Hello, world!</title>
+  </head>
+  <style>
+      .button1{
+	    background-color: #00FF00;
+    	position:absolute;
+    	top:45%;
+   	    left:40%;
+        size: 50cm;
+	}
+  .button2{
+	    background-color: #00FF00;
+    	position:absolute;
+    	top:45%;
+   	    left:50%;
+        size: 50cm;
+	}
+  /* .button1{background-color:red ;} */
+
+	body{
+	    background-color: #dc00b3
+	}
+  h1{
+      font-family: inherit;
+      color: rgb(17, 0, 255);
+      position:absolute;
+    	top:35%;
+   	  left:45%;
+      
+  }
+   </style>
+
+
+   <script>
+    let x = 0;
+    let time = new Date;
+    time = time.getSeconds();
+    var diff = time;
+    function reset()
+    {
+        // x = 0
+        // let time = new Date;
+        // time = time.getSeconds();
+        // var diff = time;
+        document.getElementById("btn").style.top = "45%";
+        document.getElementById("btn").style.left = "50%";
+        // document.body.style.backgroundColor = "#191919";
+      document.getElementById("msg").innerHTML = "Accha thoda patt jaa";
+      document.getElementById("msg").style.left = "40%";
+
+    }
+    // function changeBG()
+    // {
+    //     document.body.style.backgroundColor = "#"+ Math.floor(Math.random()*1000000);
+    //     document.getElementById("Demo").innerHTML = "#"+ Math.floor(Math.random()*1000000);
+    // }
+    function changePos()
+    {
+        x = x+1;
+        let curr = new Date;
+        curr = curr.getSeconds();
+        diff = curr - diff;
+        document.getElementById("btn").style.top = Math.random()*600 + "px";
+        document.getElementById("btn").style.left = Math.random()*890 + "px";
+        document.body.style.backgroundColor = "#"+ Math.floor((Math.random()*0xFFFFFF)).toString(16);
+        if(x == 10)
+        {
+            reset();
+        }
+    }
+    function celebrate()
+    {
+        document.getElementById("confetti").innerHTML="c    c    c    c    c    c    c    c    c    c    c    c    c    c    c    c    c    c    c    ";
+        document.getElementById("confetti").innerHTML +="<br>o    o    o    o    o    o    o    o    o    o    o    o    o    o    o    o    o    o    o    o";
+        document.getElementById("confetti").innerHTML +="<br>n    n    n    n    n    n    n    n    n    n    n    n    n    n    n    n    n    n    n    n";
+        document.getElementById("confetti").innerHTML +="<br>f    f    f    f    f    f    f    f    f    f    f    f    f    f    f    f    f    f    f    f";
+        document.getElementById("confetti").innerHTML +="<br>e    e    e    e    e    e    e    e    e    e    e    e    e    e    e    e    e    e    e    e ";
+        document.getElementById("confetti").innerHTML +="<br>t    t    t    t    t    t    t    t    t    t    t    t    t    t    t    t    t    t    t    t";
+        document.getElementById("confetti").innerHTML +="<br>t    t    t    t    t    t    t    t    t    t    t    t    t    t    t    t    t    t    t    t";
+        document.getElementById("confetti").innerHTML +="<br>i    i    i    i    i    i    i    i    i    i    i    i    i    i    i    i    i    i    i    i";
+    }
+
+   </script>
+
+
+  <body>
+    <p id = "confetti"></p>
+    <h1 id = "msg">Patt jaa</h1>
+    <button class="button button1" id = "button1" onclick="celebrate()">Yayayayayaay</button>
+    <button class="button button2" id = "btn" onmouseover = "changePos()">Nope</button>
+    <p id = "Demo"></p>
+    
+  </body>
+</html>
